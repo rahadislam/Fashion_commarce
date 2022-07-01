@@ -6,7 +6,7 @@ const Home = () => {
     const { register, handleSubmit ,reset} = useForm();
     const onSubmit = data => {
         console.log(data);
-        fetch('http://localhost:5000/task', {
+        fetch('https://true-goose-88624.herokuapp.com/task', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

@@ -13,6 +13,7 @@ const Header = () => {
         <li><Link to="/home">Home</Link></li>
         <li><Link to="/todo">To-Do</Link></li>
         <li><Link to="/complete">Completed Tasks</Link></li>
+        <li><Link to="/calendar">Calendar</Link></li>
       </ul>
     </div>
     <Link to="/home" class="btn btn-ghost normal-case text-xl">Task Manage</Link>
@@ -22,6 +23,7 @@ const Header = () => {
          <li><Link to="/home">Home</Link></li>
         <li><Link to="/todo">To-Do</Link></li>
         <li><Link to="/complete">Completed Tasks</Link></li>
+        <li><Link to="/calendar">Calendar</Link></li>
     </ul>
   </div>
   

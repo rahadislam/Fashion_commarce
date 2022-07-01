@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const CompleteTask = () => {
     const [cTask,setCtask]=useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/complete')
+        fetch('https://true-goose-88624.herokuapp.com/complete')
             .then(res => res.json())
             .then(data => setCtask(data))
     }, []);
@@ -11,7 +11,7 @@ const CompleteTask = () => {
 
     return (
         <div class="mx-5 my-3">
-            <h2 className='text-3xl mx-5 my-3'>Task Detals</h2>
+            <h2 className='text-3xl mx-5 my-3'>Task Complete</h2>
 
             {
                 cTask.map(t => 

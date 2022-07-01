@@ -9,7 +9,7 @@ const Update = () => {
     const navigate=useNavigate()
 
     const onSubmit = data => {
-        fetch(`http://localhost:5000/task/${id}`, {
+        fetch(`https://true-goose-88624.herokuapp.com/task/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

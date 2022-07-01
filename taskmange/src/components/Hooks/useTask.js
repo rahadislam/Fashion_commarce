@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const useTask = (_id) => {
     const [taskCom,setTaskcom]=useState();
     useEffect(()=>{
-        fetch(`http://localhost:5000/task/${_id}`)
+        fetch(`https://true-goose-88624.herokuapp.com/task/${_id}`)
         .then(res=>res.json())
         .then(data=>setTaskcom(data))
     },[_id])

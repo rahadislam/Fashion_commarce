@@ -10,14 +10,14 @@ const Todo = () => {
     const [taskCom,setTaskcom]=useState();
                   
     useEffect(() => {
-        fetch('http://localhost:5000/task')
+        fetch('https://true-goose-88624.herokuapp.com/task')
             .then(res => res.json())
             .then(data => setTask(data))
     }, []);
 
 
     const handelvalue=(_id,t)=>{
-            fetch("http://localhost:5000/complete", {
+            fetch("https://true-goose-88624.herokuapp.com/complete", {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -27,7 +27,7 @@ const Todo = () => {
         .then(res=>res.json())
         .then(complete=>{
 
-        const url=(`http://localhost:5000/task/${_id}`);
+        const url=(`https://true-goose-88624.herokuapp.com/task/${_id}`);
         fetch(url,{
             method:'DELETE'
         })
@@ -37,6 +37,8 @@ const Todo = () => {
             if(data){
                 const uiUpdate=task.filter(fd=>fd._id !== _id);
                 setTask(uiUpdate);
+                
+                toast.success('Successfully save Task Task  ');
             }
             
             
@@ -48,7 +50,7 @@ const Todo = () => {
 
 
     const handelDelete=(_id)=>{
-        const url=(`http://localhost:5000/task/${_id}`);
+        const url=(`https://true-goose-88624.herokuapp.com/task/${_id}`);
         fetch(url,{
             method:'DELETE'
         })
