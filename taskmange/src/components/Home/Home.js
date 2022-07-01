@@ -1,10 +1,24 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const Home = () => {
-    const { register, formState: { errors }, handleSubmit ,reset} = useForm();
+    const { register, handleSubmit ,reset} = useForm();
     const onSubmit = data => {
         console.log(data);
+        fetch('http://localhost:5000/task', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+        .then(res=>res.json())
+        .then(inserted=>{
+        reset();
+        toast.success('Successfully Added Task  ');
+        })
+        
     }
     return (
             <div className='w-96 mx-auto'>
