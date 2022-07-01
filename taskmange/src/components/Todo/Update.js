@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 const Update = () => {
     const {id}=useParams();
     const { register, handleSubmit ,reset} = useForm();
+    const navigate=useNavigate()
 
     const onSubmit = data => {
         fetch(`http://localhost:5000/task/${id}`, {
@@ -19,6 +20,7 @@ const Update = () => {
             .then(result => {
                 reset();
                 toast.success('Successfully update Task');
+                navigate('/todo');
 
             })
         
